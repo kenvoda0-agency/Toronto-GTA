@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrightNest Cleaning | Spotless Residential & Commercial Cleaning Toronto & GTA</title>
+  <meta name="description" content="Toronto & Greater Toronto Area's top-rated residential & commercial cleaning service. Flat-rate instant quotes, background-checked cleaners, eco-friendly supplies, and 100% satisfaction guarantee.">
+  
+  <!-- Fonts: Poppins (headings) & Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       BRIGHTNEST CLEANING - CONFIGURATION & STYLES
+       All placeholder business details are centralized here for easy editing!
+       ========================================================================== */
+    :root {
+      --primary: #0e9f8e;
+      --primary-dark: #0a7a6d;
+      --primary-light: #e6f7f5;
+      --navy: #0f2a2e;
+      --accent: #ffb020;
+      --bg-mint: #f4fbfa;
+      --radius-card: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--navy);
+      background-color: var(--bg-mint);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Cards & Components */
+    .card-nest {
+      border-radius: var(--radius-card);
+      background: #ffffff;
+      border: 1px solid rgba(14, 159, 142, 0.12);
+      box-shadow: 0 10px 30px -10px rgba(15, 42, 46, 0.07);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .card-nest:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px -12px rgba(14, 159, 142, 0.18);
+      border-color: rgba(14, 159, 142, 0.3);
+    }
+
+    .header-glass {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(14, 159, 142, 0.15);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      font-weight: 700;
+      border-radius: 12px;
+      padding: 0.85rem 1.75rem;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(14, 159, 142, 0.35);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(14, 159, 142, 0.45);
+    }
+
+    .btn-amber {
+      background: var(--accent);
+      color: var(--navy);
+      font-weight: 800;
+      border-radius: 12px;
+      padding: 0.9rem 1.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(255, 176, 32, 0.4);
+    }
+    .btn-amber:hover {
+      background: #e59d18;
+      transform: translateY(-2px);
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background: var(--navy);
+      color: rgba(255,255,255,0.9);
+      font-size: 0.8rem;
+      padding: 0.45rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .top-bar-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Header */
+    .nav-header {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--primary), #25d3b6);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 10px rgba(14, 159, 142, 0.3);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: rgba(15, 42, 46, 0.85);
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 3.5rem 0 5rem;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .rating-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #ffffff;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(14, 159, 142, 0.25);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .hero-title {
+      font-size: 3.4rem;
+      font-weight: 800;
+      line-height: 1.12;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-title .highlight {
+      color: var(--primary);
+      position: relative;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: #4a6164;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      max-width: 580px;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Calculator Form */
+    .calc-card {
+      padding: 2rem;
+      border-radius: 20px;
+      background: #ffffff;
+      box-shadow: 0 15px 40px -10px rgba(14, 159, 142, 0.2);
+      border: 2px solid rgba(14, 159, 142, 0.15);
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #557175;
+      margin-bottom: 0.35rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.65rem 0.9rem;
+      border-radius: 10px;
+      border: 1px solid #d4e5e3;
+      background: #f4fbfa;
+      font-size: 0.9rem;
+      font-family: inherit;
+      font-weight: 600;
+      color: var(--navy);
+      outline: none;
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(14, 159, 142, 0.15);
+    }
+    .freq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+    .freq-btn {
+      padding: 0.5rem 0.6rem;
+      border-radius: 10px;
+      border: 1px solid #d4e5e3;
+      background: #f4fbfa;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    .freq-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .price-box {
+      background: linear-gradient(135deg, var(--navy), #17454c);
+      color: white;
+      padding: 1.2rem;
+      border-radius: 14px;
+      margin: 1.25rem 0;
+    }
+    .price-large {
+      font-size: 2.4rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Stats Band */
+    .stats-band {
+      background: var(--navy);
+      color: white;
+      padding: 3rem 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Services */
+    .section-title {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .badge-sub {
+      display: inline-block;
+      padding: 0.3rem 0.85rem;
+      border-radius: 9999px;
+      background: rgba(14, 159, 142, 0.12);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      align-items: stretch;
+    }
+    .pricing-featured {
+      border: 2px solid var(--primary);
+      transform: scale(1.03);
+      position: relative;
+    }
+    .pop-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: var(--navy);
+      padding: 0.3rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    /* Steps */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .step-num {
+      width: 48px;
+      height: 48px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin: 0 auto 1.25rem;
+    }
+
+    /* Slider Container */
+    .slider-box {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      border-radius: 16px;
+      overflow: hidden;
+      user-select: none;
+      cursor: ew-resize;
+    }
+
+    /* Floating Buttons */
+    .floating-tools {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 999;
+    }
+    .float-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      transition: transform 0.2s;
+    }
+    .float-circle:hover {
+      transform: scale(1.1);
+    }
+    .btn-wa { background: #25D366; }
+    .btn-call { background: var(--primary); }
+
+    /* Toast */
+    .toast-box {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--navy);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 14px;
+      border: 1px solid var(--primary);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      display: none;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 600;
+      z-index: 1000;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid, .services-grid, .pricing-grid, .stats-grid, .steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links { display: none; }
+      .hero-title { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div>✨ Serving Toronto & the entire GTA · Open 7 days, 8am – 9pm</div>
+      <div>
+        <a href="tel:+14165550123" style="font-weight:700;">📞 (416) 555-0123</a>
+        &nbsp;·&nbsp;
+        <a href="mailto:hello@brightnest.ca">✉️ hello@brightnest.ca</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. STICKY HEADER -->
+  <header class="header-glass">
+    <div class="container nav-header">
+      <a href="#" class="brand-logo">
+        <div class="brand-badge">✨</div>
+        <div>
+          <span style="font-family:'Poppins',sans-serif; color:var(--navy);">BrightNest</span><span style="color:var(--primary);">.</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#results">Results</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div>
+        <a href="#quote-calculator" class="btn-primary">Get Free Quote →</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. HERO SECTION & LIVE QUOTE CALCULATOR -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="rating-pill">
+          <span>🏆</span>
+          <span>Rated <strong>4.9/5</strong> by 200+ GTA clients</span>
+        </div>
+        <h1 class="hero-title">
+          Come home to a <span class="highlight">spotless space</span> you'll love.
+        </h1>
+        <p class="hero-desc">
+          Professional flat-rate cleaning across Toronto and the Greater Toronto Area. Background-checked cleaners, pet-safe eco products, and our 100% free re-clean guarantee.
+        </p>
+        <div class="hero-ctas">
+          <a href="#quote-calculator" class="btn-primary">Get Instant Quote →</a>
+          <a href="tel:+14165550123" class="btn-amber" style="background:#ffffff; border:2px solid var(--primary); color:var(--navy);">📞 Call (416) 555-0123</a>
+        </div>
+        <div style="font-size:0.9rem; color:#4a6164; display:flex; align-items:center; gap:0.5rem;">
+          <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+          <strong>Trusted by 500+ homes & businesses in GTA</strong>
+        </div>
+      </div>
+
+      <!-- Live Quote Calculator -->
+      <div id="quote-calculator" class="calc-card">
+        <div style="font-size:0.75rem; font-weight:800; color:var(--primary); text-transform:uppercase; letter-spacing:0.05em;">Live Price Estimator</div>
+        <h3 style="font-family:'Poppins',sans-serif; font-size:1.4rem; margin:0.25rem 0 1rem; color:var(--navy);">Calculate Your Clean</h3>
+        
+        <form id="calcForm" onsubmit="event.preventDefault(); submitQuote();">
+          <div class="form-group">
+            <label>Service Type</label>
+            <select id="calcService" class="form-control" onchange="updateCalc()">
+              <option value="1">Regular Clean (Ongoing upkeep)</option>
+              <option value="1.6">Deep Cleaning (Thorough scrub)</option>
+              <option value="1.5">Move-In / Move-Out Turnover</option>
+              <option value="1.3">Airbnb Turnover & Linens</option>
+              <option value="1.8">Post-Construction Detailing</option>
+              <option value="1.2">Office & Commercial</option>
+            </select>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+            <div class="form-group">
+              <label>Bedrooms</label>
+              <select id="calcBeds" class="form-control" onchange="updateCalc()">
+                <option value="1">1 Bedroom</option>
+                <option value="2" selected>2 Bedrooms</option>
+                <option value="3">3 Bedrooms</option>
+                <option value="4">4 Bedrooms</option>
+                <option value="5">5+ Bedrooms</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Bathrooms</label>
+              <select id="calcBaths" class="form-control" onchange="updateCalc()">
+                <option value="1">1 Bath</option>
+                <option value="2" selected>2 Baths</option>
+                <option value="3">3 Baths</option>
+                <option value="4">4+ Baths</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Frequency</label>
+            <div class="freq-grid">
+              <button type="button" class="freq-btn" data-factor="1" onclick="setFreq(this, 1)">One-time</button>
+              <button type="button" class="freq-btn" data-factor="0.9" onclick="setFreq(this, 0.9)">Monthly (-10%)</button>
+              <button type="button" class="freq-btn active" data-factor="0.85" onclick="setFreq(this, 0.85)">Bi-weekly (-15%)</button>
+              <button type="button" class="freq-btn" data-factor="0.8" onclick="setFreq(this, 0.8)">Weekly (-20%)</button>
+            </div>
+          </div>
+
+          <div class="price-box">
+            <div style="font-size:0.75rem; opacity:0.8;">Estimated price (before tax):</div>
+            <div class="price-large" id="priceDisplay">$157</div>
+            <div style="font-size:0.75rem; color:#25d3b6;">✓ All eco supplies & GTA travel included</div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="custName" class="form-control" placeholder="Your Full Name" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="custPhone" class="form-control" placeholder="Phone Number (416-555-0123)" required>
+          </div>
+
+          <button type="submit" class="btn-amber" style="width:100%; justify-content:center;">
+            Request My Free Quote
+          </button>
+          <div style="text-align:center; font-size:0.75rem; color:#6b878b; margin-top:0.75rem;">
+            🔒 Your info is never shared. We confirm within 1 hour.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. DARK STATS BAND -->
+  <section class="stats-band">
+    <div class="container stats-grid">
+      <div>
+        <div class="stat-number" style="color:#25d3b6;">500+</div>
+        <div style="font-weight:600;">Happy Clients</div>
+        <div style="font-size:0.75rem; opacity:0.6;">Toronto & GTA wide</div>
+      </div>
+      <div>
+        <div class="stat-number" style="color:var(--accent);">127</div>
+        <div style="font-weight:600;">Five-Star Reviews</div>
+        <div style="font-size:0.75rem; opacity:0.6;">Google & Homestars</div>
+      </div>
+      <div>
+        <div class="stat-number" style="color:#25d3b6;">8+</div>
+        <div style="font-weight:600;">Years Experience</div>
+        <div style="font-size:0.75rem; opacity:0.6;">Founded in 2018</div>
+      </div>
+      <div>
+        <div class="stat-number" style="color:white;">100%</div>
+        <div style="font-weight:600;">Satisfaction Guarantee</div>
+        <div style="font-size:0.75rem; opacity:0.6;">Free 24hr re-clean</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SERVICES -->
+  <section id="services" style="padding:5rem 0; background:#ffffff;">
+    <div class="container">
+      <div class="section-title">
+        <span class="badge-sub">Our Offerings</span>
+        <h2 style="font-size:2.4rem; font-weight:800; color:var(--navy);">Comprehensive Cleaning Services</h2>
+      </div>
+      <div class="services-grid">
+        <div class="card-nest" style="padding:2rem;">
+          <div style="font-size:2rem; margin-bottom:1rem;">🏠</div>
+          <h3 style="font-size:1.25rem; font-weight:700; margin-bottom:0.5rem;">House Cleaning</h3>
+          <p style="font-size:0.9rem; color:#557175; margin-bottom:1.25rem;">Standard maintenance clean for kitchens, bathrooms, floors, and common areas.</p>
+          <a href="#quote-calculator" style="color:var(--primary); font-weight:700; font-size:0.9rem;">Get a quote →</a>
+        </div>
+        <div class="card-nest" style="padding:2rem;">
+          <div style="font-size:2rem; margin-bottom:1rem;">✨</div>
+          <h3 style="font-size:1.25rem; font-weight:700; margin-bottom:0.5rem;">Deep Cleaning</h3>
+          <p style="font-size:0.9rem; color:#557175; margin-bottom:1.25rem;">Intensive scrub of baseboards, inside oven/microwave, tile grout, and forgotten corners.</p>
+          <a href="#quote-calculator" style="color:var(--primary); font-weight:700; font-size:0.9rem;">Get a quote →</a>
+        </div>
+        <div class="card-nest" style="padding:2rem;">
+          <div style="font-size:2rem; margin-bottom:1rem;">📦</div>
+          <h3 style="font-size:1.25rem; font-weight:700; margin-bottom:0.5rem;">Move-In / Move-Out</h3>
+          <p style="font-size:0.9rem; color:#557175; margin-bottom:1.25rem;">Comprehensive vacancy turnaround for landlords, tenants, and realtors.</p>
+          <a href="#quote-calculator" style="color:var(--primary); font-weight:700; font-size:0.9rem;">Get a quote →</a>
+        </div>
+        <div class="card-nest" style="padding:2rem;">
+          <div style="font-size:2rem; margin-bottom:1rem;">🛎️</div>
+          <h3 style="font-size:1.25rem; font-weight:700; margin-bottom:0.5rem;">Airbnb Turnover</h3>
+          <p style="font-size:0.9rem; color:#557175; margin-bottom:1.25rem;">Hotel-grade turnaround with crisp linen changes, restocking, and damage inspections.</p>
+          <a href="#quote-calculator" style="color:var(--primary); font-weight:700; font-size:0.9rem;">Get a quote →</a>
+        </div>
+        <div class="card-nest" style="padding:2rem;">
+          <div style="font-size:2rem; margin-bottom:1rem;">🏢</div>
+          <h3 style="font-size:1.25rem; font-weight:700; margin-bottom:0.5rem;">Office & Commercial</h3>
+          <p style="font-size:0.9rem; color:#557175; margin-bottom:1.25rem;">Desks, boardrooms, kitchens, and sanitized restrooms for GTA corporate spaces.</p>
+          <a href="#quote-calculator" style="color:var(--primary); font-weight:700; font-size:0.9rem;">Get a quote →</a>
+        </div>
+        <div class="card-nest" style="padding:2rem;">
+          <div style="font-size:2rem; margin-bottom:1rem;">🛋️</div>
+          <h3 style="font-size:1.25rem; font-weight:700; margin-bottom:0.5rem;">Carpet & Upholstery</h3>
+          <p style="font-size:0.9rem; color:#557175; margin-bottom:1.25rem;">Hot water steam extraction for pet odors, deep stains, allergens, and fibers.</p>
+          <a href="#quote-calculator" style="color:var(--primary); font-weight:700; font-size:0.9rem;">Get a quote →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PRICING -->
+  <section id="pricing" style="padding:5rem 0; background:var(--bg-mint);">
+    <div class="container">
+      <div class="section-title">
+        <span class="badge-sub">Simple Rates</span>
+        <h2 style="font-size:2.4rem; font-weight:800; color:var(--navy);">Transparent Flat-Rate Pricing</h2>
+      </div>
+      <div class="pricing-grid">
+        <div class="card-nest" style="padding:2.5rem;">
+          <div style="font-size:0.8rem; font-weight:700; color:#557175;">REGULAR CLEAN</div>
+          <div style="font-size:2.5rem; font-weight:800; margin:0.5rem 0;">from $120<span style="font-size:0.9rem; font-weight:500;">/visit</span></div>
+          <ul style="list-style:none; font-size:0.9rem; line-height:2.2; margin-bottom:2rem; color:#4a6164;">
+            <li>✓ Kitchen counters, stove & sink</li>
+            <li>✓ Full bathroom sanitation & mirrors</li>
+            <li>✓ Vacuum & damp microfiber mopping</li>
+            <li>✓ Eco supplies & equipment included</li>
+          </ul>
+          <a href="#quote-calculator" class="btn-primary" style="width:100%; justify-content:center;">Select Plan</a>
+        </div>
+
+        <div class="card-nest pricing-featured" style="padding:2.5rem;">
+          <div class="pop-badge">⭐ MOST POPULAR</div>
+          <div style="font-size:0.8rem; font-weight:700; color:var(--primary);">DEEP CLEAN</div>
+          <div style="font-size:2.5rem; font-weight:800; margin:0.5rem 0; color:var(--primary);">from $199<span style="font-size:0.9rem; font-weight:500;">/visit</span></div>
+          <ul style="list-style:none; font-size:0.9rem; line-height:2.2; margin-bottom:2rem; color:#4a6164;">
+            <li>✓ <strong>All Regular inclusions</strong></li>
+            <li>✓ Baseboards & door trim hand-scrubbed</li>
+            <li>✓ Inside oven & microwave grease purge</li>
+            <li>✓ Soap scum & grout lines detail</li>
+          </ul>
+          <a href="#quote-calculator" class="btn-primary" style="width:100%; justify-content:center;">Book Deep Clean</a>
+        </div>
+
+        <div class="card-nest" style="padding:2.5rem;">
+          <div style="font-size:0.8rem; font-weight:700; color:#557175;">COMMERCIAL</div>
+          <div style="font-size:2.5rem; font-weight:800; margin:0.5rem 0;">Custom<span style="font-size:0.9rem; font-weight:500;"> quote</span></div>
+          <div style="background:rgba(14,159,142,0.1); color:var(--primary); font-size:0.8rem; font-weight:800; padding:0.35rem 0.6rem; border-radius:6px; margin-bottom:1rem;">
+            FREE demo clean for new clients
+          </div>
+          <ul style="list-style:none; font-size:0.9rem; line-height:2.2; margin-bottom:2rem; color:#4a6164;">
+            <li>✓ Flexible after-hours or day shifts</li>
+            <li>✓ Workstation & boardroom sanitization</li>
+            <li>✓ Dedicated account manager</li>
+            <li>✓ $5M commercial liability policy</li>
+          </ul>
+          <a href="#quote-calculator" class="btn-primary" style="width:100%; justify-content:center;">Request Custom</a>
+        </div>
+      </div>
+      <div style="text-align:center; font-size:0.8rem; color:#6b878b; margin-top:2rem;">
+        * Sample pricing for demonstration purposes.
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. HOW IT WORKS -->
+  <section id="how-it-works" style="padding:5rem 0; background:#ffffff;">
+    <div class="container">
+      <div class="section-title">
+        <span class="badge-sub">Effortless Flow</span>
+        <h2 style="font-size:2.4rem; font-weight:800; color:var(--navy);">How It Works</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="card-nest" style="padding:2rem;">
+          <div class="step-num">1</div>
+          <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:0.5rem;">Get a Quote</h3>
+          <p style="font-size:0.85rem; color:#557175;">Choose your rooms and frequency in our 30-second live calculator.</p>
+        </div>
+        <div class="card-nest" style="padding:2rem;">
+          <div class="step-num">2</div>
+          <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:0.5rem;">Book Online</h3>
+          <p style="font-size:0.85rem; color:#557175;">Select your arrival window with instant SMS and email confirmation.</p>
+        </div>
+        <div class="card-nest" style="padding:2rem;">
+          <div class="step-num">3</div>
+          <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:0.5rem;">We Clean</h3>
+          <p style="font-size:0.85rem; color:#557175;">Insured, vetted cleaners arrive with hospital-grade eco supplies.</p>
+        </div>
+        <div class="card-nest" style="padding:2rem; border-color:var(--accent);">
+          <div class="step-num" style="background:var(--accent); color:var(--navy);">4</div>
+          <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:0.5rem;">Enjoy!</h3>
+          <p style="font-size:0.85rem; color:#557175; margin-bottom:0.5rem;">Relax in a spotless home. Not happy? Free re-clean guarantee!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. RESULTS (BEFORE / AFTER INTERACTIVE SLIDER) -->
+  <section id="results" style="padding:5rem 0; background:var(--bg-mint);">
+    <div class="container">
+      <div class="section-title">
+        <span class="badge-sub">Real Results</span>
+        <h2 style="font-size:2.4rem; font-weight:800; color:var(--navy);">Interactive Before & After</h2>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:3rem; align-items:center;">
+        <!-- Slider -->
+        <div class="card-nest" style="padding:1rem;">
+          <div id="sliderBox" class="slider-box" onmousedown="startDrag()" onmousemove="drag(event)" ontouchmove="touchDrag(event)">
+            <!-- Clean Tile (After) -->
+            <div style="position:absolute; inset:0; background:linear-gradient(135deg, #e6f7f5, #ffffff, #d2f4ef); display:flex; flex-direction:column; justify-content:space-between; padding:1.5rem;">
+              <div style="text-align:right;"><span style="background:var(--primary); color:white; padding:0.3rem 0.8rem; border-radius:9999px; font-size:0.75rem; font-weight:800;">✨ AFTER (BrightNest)</span></div>
+              <div style="color:var(--primary); font-size:1.5rem;">💎 Gleaming surfaces · Zero residue</div>
+            </div>
+            <!-- Grimy Tile (Before) -->
+            <div id="beforeOverlay" style="position:absolute; inset-y:0; left:0; width:50%; background:linear-gradient(135deg, #3a3227, #4d4234, #2c261e); display:flex; flex-direction:column; justify-content:space-between; padding:1.5rem; overflow:hidden;">
+              <div><span style="background:#000000; color:#ffb020; padding:0.3rem 0.8rem; border-radius:9999px; font-size:0.75rem; font-weight:800;">⚡ BEFORE</span></div>
+              <div style="color:#d9c5b2; font-size:1.2rem; white-space:nowrap;">☕ Grease, dust & grout haze</div>
+            </div>
+            <!-- Divider -->
+            <div id="dragDivider" style="position:absolute; top:0; bottom:0; left:50%; width:3px; background:white; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+              <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:36px; height:36px; background:white; border-radius:50%; border:2px solid var(--primary); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:0.8rem;">⟷</div>
+            </div>
+          </div>
+          <div style="text-align:center; font-size:0.8rem; color:#6b878b; margin-top:0.75rem;">👈 Drag or touch slider horizontally to inspect 👉</div>
+        </div>
+
+        <!-- Checklist -->
+        <div>
+          <h3 style="font-size:1.8rem; font-weight:800; margin-bottom:1.5rem; color:var(--navy);">The BrightNest Standard</h3>
+          <ul style="list-style:none; line-height:2.2; font-size:0.95rem; color:#4a6164; margin-bottom:2rem;">
+            <li>🛡️ <strong>Background-checked cleaners:</strong> 100% vetted & verified technicians</li>
+            <li>🌿 <strong>Eco-friendly supplies:</strong> Non-toxic, kid-safe & pet-safe hospital-grade formulas</li>
+            <li>💯 <strong>Insured with guarantee:</strong> Free re-clean within 24 hours if not satisfied</li>
+            <li>⚡ <strong>Same-day availability:</strong> Responsive 7-day GTA scheduling</li>
+          </ul>
+          <a href="#quote-calculator" class="btn-primary">Book My Clean</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. REVIEWS -->
+  <section id="reviews" style="padding:5rem 0; background:#ffffff;">
+    <div class="container">
+      <div class="section-title">
+        <span class="badge-sub">Happy Clients</span>
+        <h2 style="font-size:2.4rem; font-weight:800; color:var(--navy);">4.9/5 from 200+ Google reviews</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:2rem;">
+        <div class="card-nest" style="padding:2rem;">
+          <div style="color:var(--accent); font-size:1.1rem; margin-bottom:0.75rem;">★★★★★</div>
+          <p style="font-size:0.9rem; font-style:italic; color:#4a6164; margin-bottom:1.5rem;">
+            "BrightNest transformed my condo after renovation. The deep clean removed drywall dust I couldn't reach. It felt like checking into a luxury hotel!"
+          </p>
+          <div style="font-weight:700; font-size:0.9rem;">Sarah M. – Toronto</div>
+        </div>
+        <div class="card-nest" style="padding:2rem;">
+          <div style="color:var(--accent); font-size:1.1rem; margin-bottom:0.75rem;">★★★★★</div>
+          <p style="font-size:0.9rem; font-style:italic; color:#4a6164; margin-bottom:1.5rem;">
+            "We have two dogs and need reliable bi-weekly visits. Punctual, respectful of our pets, and flat-rate pricing means no surprises. Highly recommend!"
+          </p>
+          <div style="font-weight:700; font-size:0.9rem;">James L. – Mississauga</div>
+        </div>
+        <div class="card-nest" style="padding:2rem;">
+          <div style="color:var(--accent); font-size:1.1rem; margin-bottom:0.75rem;">★★★★★</div>
+          <p style="font-size:0.9rem; font-style:italic; color:#4a6164; margin-bottom:1.5rem;">
+            "Outstanding move-out clean! Our landlord gave us 100% deposit back on the spot and praised the spotless oven. Super smooth booking!"
+          </p>
+          <div style="font-weight:700; font-size:0.9rem;">Jennifer K. – Markham</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ ACCORDION -->
+  <section id="faq" style="padding:5rem 0; background:var(--bg-mint);">
+    <div class="container" style="max-width:800px;">
+      <div class="section-title">
+        <span class="badge-sub">Answers</span>
+        <h2 style="font-size:2.4rem; font-weight:800; color:var(--navy);">Frequently Asked Questions</h2>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        
+        <details class="card-nest" style="padding:1.25rem 1.75rem;" open>
+          <summary style="font-weight:700; font-size:1.05rem; cursor:pointer; color:var(--navy);">How do you calculate pricing?</summary>
+          <p style="font-size:0.9rem; color:#557175; margin-top:0.75rem;">Our rates are flat-rate based on room counts, service type, and frequency. No surprise hourly charges.</p>
+        </details>
+
+        <details class="card-nest" style="padding:1.25rem 1.75rem;">
+          <summary style="font-weight:700; font-size:1.05rem; cursor:pointer; color:var(--navy);">Do I need to be home?</summary>
+          <p style="font-size:0.9rem; color:#557175; margin-top:0.75rem;">No. Most clients leave lockbox, smart keypad, or concierge instructions. Cleaners are bonded and insured.</p>
+        </details>
+
+        <details class="card-nest" style="padding:1.25rem 1.75rem;">
+          <summary style="font-weight:700; font-size:1.05rem; cursor:pointer; color:var(--navy);">Do you bring your own supplies?</summary>
+          <p style="font-size:0.9rem; color:#557175; margin-top:0.75rem;">Yes! We provide hospital-grade HEPA vacuums, microfiber cloths, and plant-based eco-friendly cleaners.</p>
+        </details>
+
+        <details class="card-nest" style="padding:1.25rem 1.75rem;">
+          <summary style="font-weight:700; font-size:1.05rem; cursor:pointer; color:var(--navy);">What if I'm not satisfied?</summary>
+          <p style="font-size:0.9rem; color:#557175; margin-top:0.75rem;">Contact us within 24 hours and we return to re-clean any area free of charge.</p>
+        </details>
+
+        <details class="card-nest" style="padding:1.25rem 1.75rem;">
+          <summary style="font-weight:700; font-size:1.05rem; cursor:pointer; color:var(--navy);">How far in advance should I book?</summary>
+          <p style="font-size:0.9rem; color:#557175; margin-top:0.75rem;">2 to 3 days is recommended. Same-day emergency bookings are also accommodated whenever possible.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. SERVICE AREAS (PILL TAGS) -->
+  <section style="padding:4rem 0; background:#ffffff; text-align:center;">
+    <div class="container">
+      <h3 style="font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; color:var(--navy);">Serving Toronto & The Greater Toronto Area</h3>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.6rem; max-width:850px; margin:0 auto;">
+        <span style="background:var(--bg-mint); border:1px solid rgba(14,159,142,0.3); padding:0.4rem 1rem; border-radius:9999px; font-size:0.85rem; font-weight:600;">📍 Toronto</span>
+        <span style="background:var(--bg-mint); border:1px solid rgba(14,159,142,0.3); padding:0.4rem 1rem; border-radius:9999px; font-size:0.85rem; font-weight:600;">📍 North York</span>
+        <span style="background:var(--bg-mint); border:1px solid rgba(14,159,142,0.3); padding:0.4rem 1rem; border-radius:9999px; font-size:0.85rem; font-weight:600;">📍 Scarborough</span>
+        <span style="background:var(--bg-mint); border:1px solid rgba(14,159,142,0.3); padding:0.4rem 1rem; border-radius:9999px; font-size:0.85rem; font-weight:600;">📍 Etobicoke</span>
+        <span style="background:var(--bg-mint); border:1px solid rgba(14,159,142,0.3); padding:0.4rem 1rem; border-radius:9999px; font-size:0.85rem; font-weight:600;">📍 Mississauga</span>
+        <span style="background:var(--bg-mint); border:1px solid rgba(14,159,142,0.3); padding:0.4rem 1rem; border-radius:9999px; font-size:0.85rem; font-weight:600;">📍 Brampton</span>
+        <span style="background:var(--bg-mint); border:1px solid rgba(14,159,142,0.3); padding:0.4rem 1rem; border-radius:9999px; font-size:0.85rem; font-weight:600;">📍 Vaughan</span>
+        <span style="background:var(--bg-mint); border:1px solid rgba(14,159,142,0.3); padding:0.4rem 1rem; border-radius:9999px; font-size:0.85rem; font-weight:600;">📍 Markham</span>
+        <span style="background:var(--bg-mint); border:1px solid rgba(14,159,142,0.3); padding:0.4rem 1rem; border-radius:9999px; font-size:0.85rem; font-weight:600;">📍 Richmond Hill</span>
+        <span style="background:var(--bg-mint); border:1px solid rgba(14,159,142,0.3); padding:0.4rem 1rem; border-radius:9999px; font-size:0.85rem; font-weight:600;">📍 Oakville</span>
+        <span style="background:var(--bg-mint); border:1px solid rgba(14,159,142,0.3); padding:0.4rem 1rem; border-radius:9999px; font-size:0.85rem; font-weight:600;">📍 Burlington</span>
+        <span style="background:var(--bg-mint); border:1px solid rgba(14,159,142,0.3); padding:0.4rem 1rem; border-radius:9999px; font-size:0.85rem; font-weight:600;">📍 Pickering</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. FINAL CTA BANNER -->
+  <section style="padding:5rem 0; background:linear-gradient(135deg, var(--navy), var(--primary)); color:white; text-align:center;">
+    <div class="container" style="max-width:700px;">
+      <h2 style="font-size:2.8rem; font-weight:800; margin-bottom:1rem;">Ready for a spotless space?</h2>
+      <p style="font-size:1.1rem; opacity:0.9; margin-bottom:2rem;">Join hundreds of satisfied Toronto & GTA clients today.</p>
+      <a href="#quote-calculator" class="btn-amber" style="font-size:1.1rem; padding:1rem 2.5rem;">Get My Free Quote</a>
+    </div>
+  </section>
+
+  <!-- 13. FOOTER -->
+  <footer style="background:#09191c; color:rgba(255,255,255,0.7); padding:4rem 0 2rem; font-size:0.85rem;">
+    <div class="container" style="display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:3rem; margin-bottom:3rem;">
+      <div>
+        <div style="font-size:1.4rem; font-weight:800; color:white; margin-bottom:1rem;">✨ BrightNest.</div>
+        <p style="line-height:1.6; margin-bottom:1rem;">Premier residential and commercial cleaning across Toronto & the GTA.</p>
+        <div>Open 7 days: 8am – 9pm</div>
+      </div>
+      <div>
+        <div style="color:white; font-weight:700; margin-bottom:1rem;">For Homes</div>
+        <div style="line-height:2;">House Cleaning<br>Deep Cleaning<br>Move-In/Out<br>Carpet Cleaning</div>
+      </div>
+      <div>
+        <div style="color:white; font-weight:700; margin-bottom:1rem;">For Business</div>
+        <div style="line-height:2;">Office Cleaning<br>Airbnb Turnovers<br>Commercial Janitorial<br>Free Demo Clean</div>
+      </div>
+      <div>
+        <div style="color:white; font-weight:700; margin-bottom:1rem;">Company</div>
+        <div style="line-height:2;">About Us<br>Pricing<br>Contact<br>Service Areas</div>
+      </div>
+    </div>
+    <div class="container" style="border-top:1px solid rgba(255,255,255,0.1); padding-top:1.5rem; text-align:center; font-size:0.75rem; opacity:0.6;">
+      © 2026 BrightNest Cleaning · Demo website
+    </div>
+  </footer>
+
+  <!-- 14. FLOATING WHATSAPP & CALL BUTTONS -->
+  <div class="floating-tools">
+    <a href="https://wa.me/14165550123" target="_blank" class="float-circle btn-wa" title="WhatsApp Us">💬</a>
+    <a href="tel:+14165550123" class="float-circle btn-call" title="Call Us">📞</a>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toastBox" class="toast-box"></div>
+
+  <!-- JAVASCRIPT: QUOTE CALCULATOR & BEFORE/AFTER SLIDER -->
+  <script>
+    let currentFactor = 0.85;
+
+    function setFreq(btn, factor) {
+      document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFactor = factor;
+      updateCalc();
+    }
+
+    function updateCalc() {
+      const serviceMult = parseFloat(document.getElementById('calcService').value);
+      const beds = parseInt(document.getElementById('calcBeds').value);
+      const baths = parseInt(document.getElementById('calcBaths').value);
+      
+      const base = 95 + (beds * 25) + (baths * 20);
+      const price = Math.round(base * serviceMult * currentFactor);
+      
+      document.getElementById('priceDisplay').textContent = '$' + price;
+    }
+
+    function submitQuote() {
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      
+      if (!name || !phone) return;
+      
+      const toast = document.getElementById('toastBox');
+      toast.textContent = "✅ Thanks " + name + "! We'll contact you within 1 hour.";
+      toast.style.display = 'flex';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 5000);
+    }
+
+    // Slider Drag Logic
+    let isDragging = false;
+    function startDrag() { isDragging = true; }
+    window.addEventListener('mouseup', () => { isDragging = false; });
+    
+    function setSlider(clientX) {
+      const box = document.getElementById('sliderBox');
+      const rect = box.getBoundingClientRect();
+      let percent = ((clientX - rect.left) / rect.width) * 100;
+      if (percent < 5) percent = 5;
+      if (percent > 95) percent = 95;
+      document.getElementById('beforeOverlay').style.width = percent + '%';
+      document.getElementById('dragDivider').style.left = percent + '%';
+    }
+
+    function drag(e) {
+      if (!isDragging) return;
+      setSlider(e.clientX);
+    }
+
+    function touchDrag(e) {
+      if (e.touches.length > 0) {
+        setSlider(e.touches[0].clientX);
+      }
+    }
+
+    // Initial Calc
+    updateCalc();
+  </script>
+</body>
+</html>

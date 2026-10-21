@@ -1,0 +1,6 @@
+{
+  "name": "BrightNest Cleaning - Toronto & GTA",
+  "description": "Modern website for BrightNest Cleaning serving Toronto & the Greater Toronto Area. Features an instant quote calculator, before/after slider, and transparent pricing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
