@@ -238,15 +238,6 @@ export default function App() {
               <Mail className="w-3.5 h-3.5 text-[#0e9f8e]" />
               <span>{BUSINESS_CONFIG.email}</span>
             </a>
-            <span className="text-white/20 hidden md:inline">|</span>
-            <a
-              href="/brightnest-demo.html"
-              download="brightnest-cleaning-demo.html"
-              className="hidden md:inline-flex items-center gap-1.5 bg-[#0e9f8e]/30 hover:bg-[#0e9f8e] text-teal-100 hover:text-white px-2.5 py-0.5 rounded-full text-xs font-bold transition-all"
-              title="Download 100% self-contained single-file HTML"
-            >
-              <span>📄 Standalone HTML</span>
-            </a>
           </div>
         </div>
       </div>
